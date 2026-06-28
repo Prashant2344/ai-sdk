@@ -10,7 +10,7 @@
         "laravel/ai": "^0.8.1",
         "laravel/framework": "^13.8",
         "laravel/tinker": "^3.0",
-        "laraveljutsu/usaige": "dev-main",
+        "opensearch-project/opensearch-php": "*",
         "smalot/pdfparser": "^2.12",
         "sulimanbenhalim/laravel-ai-cost": "^0.1.0"
     },
@@ -86,10 +86,5 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true,
-    "repositories": [{
-        "name": "usaige",
-        "type": "vcs",
-        "url": "https://github.com/ludoguenet/usaige"
-    }]
+    "prefer-stable": true
 }

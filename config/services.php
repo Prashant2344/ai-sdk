@@ -35,4 +35,11 @@ return [
         ],
     ],
 
+    'opensearch' => [
+        'host' => env('OPENSEARCH_HOST', 'https://localhost:9200'),
+        'username' => env('OPENSEARCH_USERNAME', 'admin'),
+        'password' => env('OPENSEARCH_PASSWORD'),
+        'verify_ssl' => env('OPENSEARCH_VERIFY_SSL', false),
+    ],
+
 ];

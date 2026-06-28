@@ -6,7 +6,6 @@ use App\Ai\Agents\ResumeIntelligenceAgent;
 use App\Support\AiUsageReporter;
 use Illuminate\Http\UploadedFile;
 use Laravel\Ai\Files\Document;
-use Throwable;
 
 class ParseCv
 {
@@ -45,21 +44,13 @@ class ParseCv
             $prompt = $text;
         }
 
-        $run = $this->usageReporter->startRun('parse-cv');
+        $response = ResumeIntelligenceAgent::make()
+            ->prompt($prompt, $attachments, timeout: $timeout);
 
-        try {
-            $response = ResumeIntelligenceAgent::make()
-                ->prompt($prompt, $attachments, timeout: $timeout);
-
-            return $this->usageReporter->wrap(
-                $response->toArray(),
-                $this->usageReporter->track($response, $run),
-            );
-        } catch (Throwable $exception) {
-            $this->usageReporter->failRun($run, $exception);
-
-            throw $exception;
-        }
+        return $this->usageReporter->wrap(
+            $response->toArray(),
+            $this->usageReporter->track($response),
+        );
     }
 
     private function providerSupportsDocumentAttachments(): bool
