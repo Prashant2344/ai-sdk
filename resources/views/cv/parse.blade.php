@@ -103,6 +103,27 @@
             font-size: 0.875rem;
             font-weight: 600;
         }
+        .usage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        .usage-stat {
+            background: #fafaf9;
+            border: 1px solid #e7e5e4;
+            border-radius: 8px;
+            padding: 0.75rem;
+        }
+        .usage-stat span {
+            display: block;
+            color: #78716c;
+            font-size: 0.75rem;
+            margin-bottom: 0.25rem;
+        }
+        .usage-stat strong {
+            font-size: 0.95rem;
+        }
     </style>
 </head>
 <body>
@@ -145,14 +166,50 @@
         </div>
 
         @isset($result)
+            @isset($result['usage'])
+                <div class="card">
+                    <h2 style="margin: 0 0 1rem; font-size: 1.125rem;">Usage</h2>
+                    <div class="usage-grid">
+                        <div class="usage-stat">
+                            <span>Provider</span>
+                            <strong>{{ $result['usage']['provider'] ?? '—' }}</strong>
+                        </div>
+                        <div class="usage-stat">
+                            <span>Model</span>
+                            <strong>{{ $result['usage']['model'] ?? '—' }}</strong>
+                        </div>
+                        <div class="usage-stat">
+                            <span>Prompt tokens</span>
+                            <strong>{{ number_format($result['usage']['prompt_tokens'] ?? 0) }}</strong>
+                        </div>
+                        <div class="usage-stat">
+                            <span>Completion tokens</span>
+                            <strong>{{ number_format($result['usage']['completion_tokens'] ?? 0) }}</strong>
+                        </div>
+                        <div class="usage-stat">
+                            <span>Total tokens</span>
+                            <strong>{{ number_format($result['usage']['total_tokens'] ?? 0) }}</strong>
+                        </div>
+                        <div class="usage-stat">
+                            <span>Cost</span>
+                            <strong>{{ $result['usage']['cost_formatted'] ?? '$0.0000' }}</strong>
+                        </div>
+                        <div class="usage-stat">
+                            <span>Duration</span>
+                            <strong>{{ isset($result['usage']['duration_ms']) ? number_format($result['usage']['duration_ms']) . ' ms' : '—' }}</strong>
+                        </div>
+                    </div>
+                </div>
+            @endisset
+
             <div class="card">
                 <div class="meta">
                     <h2 style="margin: 0; font-size: 1.125rem;">Parsed Result</h2>
-                    @if (isset($result['parse_confidence']))
-                        <span class="badge">Confidence: {{ number_format($result['parse_confidence'] * 100, 0) }}%</span>
+                    @if (isset($result['data']['parse_confidence']))
+                        <span class="badge">Confidence: {{ number_format($result['data']['parse_confidence'] * 100, 0) }}%</span>
                     @endif
                 </div>
-                <pre>{{ json_encode($result, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) }}</pre>
+                <pre>{{ json_encode($result['data'] ?? $result, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) }}</pre>
             </div>
         @endisset
     </div>
