@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "84858a2ed40b7521bbb6a31986a42afd",
+    "content-hash": "ffd06a8f41953ae20b98b75d0d55c51c",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -1694,6 +1694,77 @@
                 "source": "https://github.com/laravel/tinker/tree/v3.0.2"
             },
             "time": "2026-03-17T14:54:13+00:00"
+        },
+        {
+            "name": "laraveljutsu/usaige",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ludoguenet/usaige.git",
+                "reference": "9cb3b59c0aa5f527a67c07d286c13bc87f0e14eb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ludoguenet/usaige/zipball/9cb3b59c0aa5f527a67c07d286c13bc87f0e14eb",
+                "reference": "9cb3b59c0aa5f527a67c07d286c13bc87f0e14eb",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/ai": "^0.8.1",
+                "php": "^8.5.0"
+            },
+            "require-dev": {
+                "larastan/larastan": "^3.10",
+                "laravel/pint": "^1.29",
+                "orchestra/testbench": "^11.1",
+                "pestphp/pest": "^4.7"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laraveljutsu\\Usaige\\UsaigeServiceProvider"
+                    ],
+                    "aliases": {
+                        "Usaige": "Laraveljutsu\\Usaige\\Facades\\Usaige"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laraveljutsu\\Usaige\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ludoguenet",
+                    "email": "ludovicguenet@gmx.com"
+                }
+            ],
+            "description": "USAIGE is a Laravel package designed to work alongside Laravel AI SDKs, providing comprehensive tracking and analytics for AI interactions. It automatically records every AI request as a Run and captures token usage, costs, provider details, model information, and response metadata as Usage records. Whether you're using OpenAI, Anthropic, Gemini, or other providers through a Laravel AI SDK, USAIGE gives you the observability needed to monitor usage, control costs, audit AI activity, and gain actionable insights into your application's AI features.",
+            "keywords": [
+                "ai",
+                "laravel",
+                "php",
+                "sdk ai"
+            ],
+            "support": {
+                "source": "https://github.com/ludoguenet/usaige/tree/main",
+                "issues": "https://github.com/ludoguenet/usaige/issues"
+            },
+            "time": "2026-06-19T16:54:48+00:00"
         },
         {
             "name": "league/commonmark",
@@ -3594,6 +3665,127 @@
                 "source": "https://github.com/ramsey/uuid/tree/4.9.3"
             },
             "time": "2026-06-18T03:57:49+00:00"
+        },
+        {
+            "name": "smalot/pdfparser",
+            "version": "v2.12.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smalot/pdfparser.git",
+                "reference": "2cfa0d92bd557875c9f52a75fde0e8392302a354"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smalot/pdfparser/zipball/2cfa0d92bd557875c9f52a75fde0e8392302a354",
+                "reference": "2cfa0d92bd557875c9f52a75fde0e8392302a354",
+                "shasum": ""
+            },
+            "require": {
+                "ext-iconv": "*",
+                "ext-zlib": "*",
+                "php": ">=7.1",
+                "symfony/polyfill-mbstring": "^1.18"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Smalot\\PdfParser\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastien MALOT",
+                    "email": "sebastien@malot.fr"
+                }
+            ],
+            "description": "Pdf parser library. Can read and extract information from pdf file.",
+            "homepage": "https://www.pdfparser.org",
+            "keywords": [
+                "extract",
+                "parse",
+                "parser",
+                "pdf",
+                "text"
+            ],
+            "support": {
+                "issues": "https://github.com/smalot/pdfparser/issues",
+                "source": "https://github.com/smalot/pdfparser/tree/v2.12.5"
+            },
+            "time": "2026-04-17T11:37:58+00:00"
+        },
+        {
+            "name": "sulimanbenhalim/laravel-ai-cost",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sulimanbenhalim/laravel-ai-cost.git",
+                "reference": "4f5a0c5cce064b11bb843df9e84451ffde71e781"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sulimanbenhalim/laravel-ai-cost/zipball/4f5a0c5cce064b11bb843df9e84451ffde71e781",
+                "reference": "4f5a0c5cce064b11bb843df9e84451ffde71e781",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^12.0|^13.0",
+                "illuminate/support": "^12.0|^13.0",
+                "laravel/ai": "^0.8",
+                "php": "^8.3"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.26",
+                "orchestra/testbench": "^10.0|^11.0",
+                "pestphp/pest": "^3.0|^4.0",
+                "phpstan/phpstan": "^2.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "AiCost": "SulimanBenhalim\\AiCost\\Facades\\AiCost",
+                        "Budget": "SulimanBenhalim\\AiCost\\Facades\\Budget"
+                    },
+                    "providers": [
+                        "SulimanBenhalim\\AiCost\\AiCostServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SulimanBenhalim\\AiCost\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Suliman Benhalim",
+                    "email": "soliman.benhalim@yahoo.com"
+                }
+            ],
+            "description": "Cost reporting and budget guardrails for the Laravel AI SDK.",
+            "homepage": "https://github.com/sulimanbenhalim/laravel-ai-cost",
+            "keywords": [
+                "ai",
+                "budget",
+                "cost",
+                "laravel",
+                "llm",
+                "pricing",
+                "tokens"
+            ],
+            "support": {
+                "issues": "https://github.com/sulimanbenhalim/laravel-ai-cost/issues",
+                "source": "https://github.com/sulimanbenhalim/laravel-ai-cost/tree/v0.1.0"
+            },
+            "time": "2026-06-18T13:18:15+00:00"
         },
         {
             "name": "symfony/clock",
@@ -8755,7 +8947,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "laraveljutsu/usaige": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

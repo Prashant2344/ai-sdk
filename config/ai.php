@@ -30,6 +30,7 @@ return [
         'resume' => [
             'provider' => env('AI_RESUME_PROVIDER'),
             'model' => env('AI_RESUME_MODEL'),
+            'timeout' => env('AI_RESUME_TIMEOUT', 300),
         ],
     ],
 

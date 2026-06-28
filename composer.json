@@ -9,7 +9,10 @@
         "php": "^8.3",
         "laravel/ai": "^0.8.1",
         "laravel/framework": "^13.8",
-        "laravel/tinker": "^3.0"
+        "laravel/tinker": "^3.0",
+        "laraveljutsu/usaige": "dev-main",
+        "smalot/pdfparser": "^2.12",
+        "sulimanbenhalim/laravel-ai-cost": "^0.1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -83,5 +86,10 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [{
+        "name": "usaige",
+        "type": "vcs",
+        "url": "https://github.com/ludoguenet/usaige"
+    }]
 }

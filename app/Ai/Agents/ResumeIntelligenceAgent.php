@@ -24,6 +24,11 @@ class ResumeIntelligenceAgent implements Agent, HasStructuredOutput
         return config('ai.agents.resume.model');
     }
 
+    public function timeout(): int
+    {
+        return (int) config('ai.agents.resume.timeout', 300);
+    }
+
     public function instructions(): Stringable|string
     {
         return $this->defaultInstructions();
